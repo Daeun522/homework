@@ -1,0 +1,9 @@
+<h1>영화 목록 (평균점수 높은순)</h1>
+<ul>
+{% for m in movies %}
+    <li>
+        <a href="{% url 'movies:movie_detail' m.id %}">{{ m.title }}</a>
+        - 평균점수: {{ m.average_score }}
+    </li>
+{% endfor %}
+</ul>

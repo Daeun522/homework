@@ -1,0 +1,5 @@
+<h1>{{ movie.title }}</h1>
+<p>{{ movie.description }}</p>
+<p>등록일: {{ movie.created_at }}</p>
+<a href="{% url 'movies:movie_rate' movie.id %}">평가하기</a>
+<a href="{% url 'movies:movie_result' movie.id %}">결과보기</a>

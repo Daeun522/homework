@@ -1,0 +1,11 @@
+<h1>{{ movie.title }} - 평가하기</h1>
+<form method="post">
+  {% csrf_token %}
+  <label>점수 선택: </label>
+  <select name="score">
+    {% for i in "12345" %}
+      <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">제출</button>
+</form>

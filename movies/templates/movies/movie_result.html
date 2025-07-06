@@ -1,0 +1,9 @@
+<h1>{{ movie.title }} - 평가 결과</h1>
+<p>평균점수: {{ movie.average_score }}</p>
+<p>총 평가 수: {{ movie.ratings.count }}</p>
+<ul>
+  {% for r in movie.ratings.all %}
+    <li>{{ r.score }}점 ({{ r.created_at }})</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'movies:movie_detail' movie.id %}">돌아가기</a>
