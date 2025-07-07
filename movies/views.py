@@ -13,7 +13,8 @@ def movie_detail(request, pk):
     if request.method == "POST":
         score = int(request.POST['score'])
         Rating.objects.create(movie=movie, score=score)
-        return redirect('movies:movie_rate.html', {'movie':movie})
+        return redirect('movies:movie_ressult', pk=pk)
+    return render(request, 'movies/movie_detail.html', {'movie': movie})
 
 def movie_result(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
